@@ -3,18 +3,18 @@
   "version": "1.0.0",
   "description": "Autonomous Outcome-Driven AI Customer Resolution Teammate for Paytm hackathon (Track 3)",
   "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "scripts": {
-    "dev:backend": "cd backend && npm run dev",
-    "dev:frontend": "cd frontend && npm run dev",
-    "build:backend": "cd backend && npm run build",
-    "build:frontend": "cd frontend && npm run build",
+    "dev:backend": "npm --workspace=backend run dev",
+    "dev:frontend": "npm --workspace=frontend run dev",
+    "build:backend": "npm --workspace=backend run build",
+    "build:frontend": "npm --workspace=frontend run build",
     "build": "npm run build:backend && npm run build:frontend",
-    "test:part5": "cd backend && npx tsx src/test_part5.ts",
-    "test:part5_1": "cd backend && npx tsx src/test_part5_1_audit.ts",
-    "test:demo_e2e": "cd backend && npx tsx src/test_demo_e2e.ts",
-    "test:part6_1": "cd backend && npx tsx src/test_part6_1_audit.ts",
-    "test:live": "cd backend && npx tsx src/test_live_servers.ts",
-    "test": "npm run test:part5 && npm run test:part5_1 && npm run test:demo_e2e && npm run test:part6_1 && npm run test:live"
+    "test:part5": "npm --workspace=backend run test:all",
+    "test": "npm --workspace=backend test"
   },
   "keywords": [
     "autonomous-ai",
