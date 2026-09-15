@@ -5,8 +5,10 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "prisma generate && tsc",
+    "build": "tsc",
     "start": "node dist/server.js",
+    "test": "tsx src/test_live_servers.ts",
+    "test:all": "tsx src/test_live_servers.ts && tsx src/test_part5.ts && tsx src/test_part5_1_audit.ts && tsx src/test_demo_e2e.ts && tsx src/test_part6_1_audit.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate deploy",
     "prisma:validate": "prisma validate"
