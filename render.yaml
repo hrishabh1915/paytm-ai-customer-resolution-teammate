@@ -6,6 +6,8 @@ services:
     buildCommand: npm install --include=dev && npx prisma generate && npm run build
     startCommand: npm start
     envVars:
+      - key: NODE_VERSION
+        value: 22
       - key: NODE_ENV
         value: production
       - key: CORS_ORIGIN
