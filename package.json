@@ -12,7 +12,9 @@
     "dev:frontend": "npm --workspace=frontend run dev",
     "build:backend": "npm --workspace=backend run build",
     "build:frontend": "npm --workspace=frontend run build",
-    "build": "npm run build:backend && npm run build:frontend",
+    "build": "npm run build:backend",
+    "build:all": "npm run build:backend && npm run build:frontend",
+    "start": "npm --workspace=backend start",
     "test:part5": "npm --workspace=backend run test:all",
     "test": "npm --workspace=backend test"
   },

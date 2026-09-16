@@ -6,7 +6,12 @@ import type {
   RunSessionResult,
 } from "../types/api";
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000/api/v1";
+const PROD_BACKEND_URL = "https://paytm-ai-customer-resolution-teammate.onrender.com/api/v1";
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL ||
+  (typeof window !== "undefined" && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1"
+    ? PROD_BACKEND_URL
+    : "http://localhost:4000/api/v1");
 
 export async function fetchDemoScenarios(): Promise<{ scenarios: DemoScenario[] }> {
   const res = await fetch(`${API_BASE}/demo/scenarios`);
